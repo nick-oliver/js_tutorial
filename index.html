@@ -4,14 +4,10 @@
       <title>Learn Enough JavaScript</title>
       <meta charset="utf-8">
       <script>
-        alert("I'm back from lunch!");
-        let lastName = "Oliver"
-        let firstName = "Nick"
-        let homeCity = "Garland"
-        let homeState = "Texas"
-        let homeZip = "75040"
-        console.log(`${firstName} ${lastName} is my name.`)
-        console.log(`I'm from ${homeCity}, ${homeState} ${homeZip}`)
+        const daysOfTheWeek = ["Sunday", "Monday", "Tuesday",     "Wednesday", "Thursday", "Friday", "Saturday"];
+        let now = new Date();
+        let dayName = daysOfTheWeek[now.getDay()];
+        alert(`I'm back from lunch! Happy ${dayName}.`);
       </script>
    </head>
    <body>
