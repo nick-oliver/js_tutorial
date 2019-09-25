@@ -3,8 +3,13 @@ function reverse(string) {
   return Array.from(string).reverse().join("");
 }
 
-// Returns True for a palindrome, false otherwise.
-function palindrome(string) {
-  let processContent = string.toLowerCase();
-  return processContent === reverse(processContent);
+// Defines a Phrase Object
+function Phrase(content) {
+  this.content = content;
+  
+  // Returns True for a palindrome, false otherwise.
+  this.palindrome = function palindrome() {
+    let processedContent = this.content.toLowerCase();
+    return processedContent === reverse(processedContent);
+  }
 }
