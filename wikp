@@ -12,4 +12,14 @@ request(url, function(error, response, body) {
   let { document } = (new JSDOM(body)).window;
   // grab all paragraphs and references
   let paragraphs = document.querySelectorAll("p");
+  let references = document.querySelectorAll(".reference")
+
+  // remove any reference occurances in wiki text
+  references.forEach(function(reference) {
+    reference.remove();
+  });
+  // print out all of the paragraphs
+  paragraphs.forEach(function(paragraph) {
+    console.log(paragraph.textContent);
+  });
 });
