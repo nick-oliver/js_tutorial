@@ -1,0 +1,15 @@
+#!/usr/local/bin/node
+
+// Returns the paragraphs from a Wikipedia link, stripped of reference numbers
+
+let request = require("request");
+let url = process.argv[2];
+
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+
+request(url, function(error, response, body) {
+  let { document } = (new JSDOM(body)).window;
+  // grab all paragraphs and references
+  let paragraphs = document.querySelectorAll("p");
+});
